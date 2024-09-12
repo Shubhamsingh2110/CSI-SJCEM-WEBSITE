@@ -1162,7 +1162,7 @@ footer p {
     body{
         height: 100%;
         width: 100%;
-        position: fixed;
+        /* position: fixed; */
     }
     .hero-img img{
         width: 100%;
@@ -1173,6 +1173,13 @@ footer p {
         text-align: center;
     }
 } 
+/* Hide the image on mobile devices */
+@media only screen and (max-width: 680px) {
+    .hero-img {
+      display: none;
+    }
+  }
+  
 
 /* map location contact us */
 @media(max-width: 991px){

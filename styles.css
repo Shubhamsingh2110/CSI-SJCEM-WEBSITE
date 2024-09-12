@@ -21,11 +21,11 @@ body {
 }
 
 #vanta-bg {
-    /* position: fixed; Fix the background in place */
+     position: fixed;/* Fix the background in place */
     top: 0;
     left: 0;
-    width: 100%; /* Ensure it covers the full width of the viewport */
-    height: 100%; /* Ensure it covers the full height of the viewport */
+    width: 100vw; /* Ensure it covers the full width of the viewport */
+    height: 100vw; /* Ensure it covers the full height of the viewport */
     z-index: -1; /* Place it behind other content */
     background: transparent; /* Ensure it doesn’t obscure the content */
   }

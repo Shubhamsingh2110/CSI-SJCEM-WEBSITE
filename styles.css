@@ -8,7 +8,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    position: fixed;
+    /* position: fixed; */
     /* background-color: #0e0f17; */
     color: #fff;
     font-family: "Chakra Petch";
@@ -25,7 +25,7 @@ body {
     top: 0;
     left: 0;
     width: 100vw; /* Ensure it covers the full width of the viewport */
-    height: 100vw; /* Ensure it covers the full height of the viewport */
+    height: 100vh; /* Ensure it covers the full height of the viewport */
     z-index: -1; /* Place it behind other content */
     background: transparent; /* Ensure it doesn’t obscure the content */
   }
@@ -1063,7 +1063,7 @@ footer p {
     body{
         height: 100%;
         width: 100%;
-        position: fixed;
+        /* position: fixed; */
     }
     header{
         padding: 15px 3%;

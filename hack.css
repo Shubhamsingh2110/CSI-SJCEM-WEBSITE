@@ -593,7 +593,8 @@ header ul li a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content:center;
+
 }
 
 .sponsorship h1 {
@@ -601,6 +602,10 @@ header ul li a:hover {
   color: #FC2C9A;
 }
 
+.sponsorship .list{
+ display: flex; 
+  justify-content:space-evenly;
+}
 main {
   margin: auto;
   display: flex;
@@ -638,10 +643,10 @@ main {
 
 @keyframes autoRun {
   from {
-    left: 100%;
+    left: 80%;
   }
   to {
-    left: calc(var(--width) * -4);
+    left: calc(var(--width) * -20);
   }
 }
 

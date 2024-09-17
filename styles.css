@@ -1135,8 +1135,9 @@ footer p {
         position: absolute;
         top: 100%;
         right: -100%;
-        width:300px;
-        height: 40vh;
+        /* width:300px; */
+        width: 200px;
+        height: 25vh;
         background: #7ee4d6;
         /* background: rgb(0,0,0,0.2); */
         display: flex;

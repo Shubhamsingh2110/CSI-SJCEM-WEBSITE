@@ -10,6 +10,10 @@
 </head>
 
 <body>
+
+    <div id="preloader"></div>
+
+
     <header>
         <div class="container">
             <img src="images/CSI SJCEM-W.png" alt="CSI Logo" class="logo">
@@ -91,11 +95,15 @@
                     <div class="box">
                         <div class="icon"><i class="fa fa-phone"></i></div>
                         <div class="text">
-                            <h3>Phone</h3>
+                            <h3>Contact</h3>
                             <p> 
-                                Leon: <a href="tel:+919359237314">+91 9359237314</a><br><br>
+                                <!-- Leon: <a href="tel:+919359237314">+91 9359237314</a><br><br>
                                 Aaditya: <a href="tel:+918668795889">+91 8668795889</a><br><br>
-                                Rohit: <a href="tel:+918237006990">+91 8237006990</a>
+                                Rohit: <a href="tel:+918237006990">+91 8237006990</a> -->
+                                Leon : leonmakasare@gmail.com<br><br>
+                                Rohit : 122rohit2007@sjcem.edu.in<br><br>
+                                Aaditya : 122aaditya2021@sjcem.edu.in<br><br>
+                                Snehal : 122snehal2107@sjcem.edu.in
                                 
                             </p>
                         </div>
@@ -1086,6 +1094,15 @@
             document.querySelector('.about-uss').classList.add('visible');
         });
     </script>
+
+    <!-- preloade -->
+    <script>
+        var loader = document.getElementById("preloader");
+        window.addEventListener("load",function(){
+            loader.style.display = "none";
+        })
+    </script>
+    <!-- preloader end -->
 
 
 </body>

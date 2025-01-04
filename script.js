@@ -1,60 +1,47 @@
-//nav bar menu opne
-document.addEventListener("DOMContentLoaded", function () {
-let menu=document.querySelector('#menu-icon');
-let navlist=document.querySelector('.active');
-
-menu.onclick = () =>{
-    menu.classList.toggle('bx-x');
-    navlist.classList.toggle('open');
-};
-
-  //close the navbar
-  function closeNavbar() {
-    menu.classList.remove('bx-x');
-    navlist.classList.remove('open');
-  }
-
-  // Add event listener to document to detect clicks outside the navbar
-  document.addEventListener('click', function (event) {
-    // Check if click is outside 
-    if (!navlist.contains(event.target) && !menu.contains(event.target)) {
-      closeNavbar();
-    }
-  });
-
-  // event listeners to all navbar links to close when a link is clicked
-  let navLinks = navlist.querySelectorAll('li a');
-  navLinks.forEach(link => {
-    link.addEventListener('click', function () {
-      closeNavbar();
-    });
-  });
-});
-
-
-
-
-
-
-
-
-
-
-// This code ensures that only one section is visible at a time, depending on the user's choice.
-
-function openPage(pageId) {
-    // Get all elements with class="page"
-    var pages = document.getElementsByClassName('page');
-    
-    // Loop through the elements and hide them
-    for (var i = 0; i < pages.length; i++) {
-        pages[i].style.display = 'none';
-    }
-    
-    // Show the specific page that was clicked
-    document.getElementById(pageId).style.display = 'block';
+ //Function to check if element is in viewport
+ function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    return (
+        rect.top <= windowHeight * 0.8 && // Element is 80% visible from top
+        rect.bottom >= windowHeight * 0.2  // Element is 20% visible from bottom
+    );
 }
 
+// Function to handle scroll events
+function handleScroll() {
+    const rocket = document.querySelector('.rocket');
+    const containers = document.querySelectorAll('.containerrr');
+    const timeline = document.querySelector('.timeline');
+    const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    
+    // Move rocket based on scroll position, but limit its movement
+    const maxBottom = window.innerHeight - 80; // 80px from top of viewport
+    const minBottom = 20; // 20px from bottom of viewport
+    const newBottom = Math.min(maxBottom, Math.max(minBottom, 20 + (scrollPercentage * 2)));
+    rocket.style.bottom = `${newBottom}px`;
 
+    // Expand timeline based on scroll direction
+    if (scrollPercentage > 50) {
+        timeline.style.height = `${scrollPercentage}%`;
+    } else {
+        timeline.style.height = `${100 - scrollPercentage}%`;
+    }
 
+    // Check each timeline container
+    containers.forEach(container => {
+        if (isInViewport(container)) {
+            container.classList.add('fade-in');
+            container.classList.remove('fade-out');
+        } else {
+            container.classList.remove('fade-in');
+            container.classList.add('fade-out');
+        }
+    });
+}
 
+// Add scroll event listener
+window.addEventListener('scroll', handleScroll);
+
+//Initial check for elements in viewport
+handleScroll();
